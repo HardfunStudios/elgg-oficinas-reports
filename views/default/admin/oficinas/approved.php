@@ -42,6 +42,9 @@ $users_approvals_by_round = array();
 $exclude_mode = get_input("exclude_mode");
 $exclude_round = get_input("exclude_round");
 
+if(!is_array($exclude_mode)) $exclude_mode=array();
+if(!is_array($exclude_round)) $exclude_round=array();
+
 if($num_users>0){
 
   foreach($groups as $group) {
@@ -103,7 +106,8 @@ if($num_users>0){
 
     $approved = 0;
     $groups_approved = "";
-    
+	
+   
     foreach($groups as $group) {
       $group_guid = $group->guid;
       
